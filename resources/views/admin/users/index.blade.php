@@ -22,7 +22,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
                         @foreach ($users as $user)
                         <tr>
                             <th scope="row">{{ $user->id }}</th>

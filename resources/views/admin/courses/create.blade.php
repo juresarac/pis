@@ -9,14 +9,20 @@
                 <div class="card-body">
                 <form action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                        <div class="row">
+                            <div class="col-md-8 mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <input type="number" min="1" max="1000" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
